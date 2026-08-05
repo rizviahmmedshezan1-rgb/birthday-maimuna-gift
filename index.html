@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Shamima ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff0066,#7b2ff7,#00c9ff);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+}
+
+@keyframes bg{
+from{background-position:left;}
+to{background-position:right;}
+}
+
+
+#count{
+font-size:120px;
+color:white;
+font-weight:bold;
+text-shadow:0 0 30px white;
+animation:pulse 1s infinite;
+}
+
+
+@keyframes pulse{
+50%{
+transform:scale(1.3);
+}
+}
+
+
+.card{
+
+display:none;
+
+width:90%;
+max-width:750px;
+
+padding:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+border-radius:30px;
+
+color:white;
+
+box-shadow:0 0 40px white;
+
+z-index:5;
+
+}
+
+
+h1{
+
+font-size:50px;
+
+animation:glow 2s infinite alternate;
+
+}
+
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px white;
+}
+
+to{
+text-shadow:0 0 40px yellow;
+}
+
+}
+
+
+h2{
+
+font-size:32px;
+
+color:#ffe66d;
+
+margin:20px;
+
+}
+
+
+p{
+
+font-size:19px;
+
+line-height:1.8;
+
+}
+
+
+.gift{
+
+font-size:90px;
+
+animation:bounce 1s infinite;
+
+}
+
+
+@keyframes bounce{
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+
+button{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff0066;
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+}
+
+
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+animation:heart 8s linear infinite;
+
+}
+
+
+@keyframes heart{
+
+from{
+transform:translateY(100vh);
+}
+
+to{
+transform:translateY(-120vh);
+}
+
+}
+
+
+.balloon{
+
+position:absolute;
+
+font-size:50px;
+
+animation:balloon 10s linear infinite;
+
+}
+
+
+@keyframes balloon{
+
+from{
+transform:translateY(120vh);
+}
+
+to{
+transform:translateY(-120vh);
+}
+
+}
+
+
+.rose{
+
+position:absolute;
+
+font-size:25px;
+
+animation:rose 8s linear infinite;
+
+}
+
+
+@keyframes rose{
+
+from{
+transform:translateY(-20vh);
+}
+
+to{
+transform:translateY(120vh) rotate(360deg);
+}
+
+}
+
+
+.confetti{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+animation:fall 4s linear;
+
+}
+
+
+@keyframes fall{
+
+from{
+transform:translateY(-20px) rotate(0);
+}
+
+to{
+transform:translateY(100vh) rotate(720deg);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div id="count">5</div>
+
+
+<div class="card" id="page">
+
+
+<div class="gift">
+🎁
+</div>
+
+
+<h1>
+🎂 Happy Birthday 🎂
+</h1>
+
+
+<h2>
+Shamima Akter Maimuna ❤️
+</h2>
+
+
+<p>
+
+৬ আগস্ট — এই বিশেষ দিনে পৃথিবী পেয়েছিল
+একজন অসাধারণ মানুষকে।
+
+<br><br>
+
+তোমার মায়াভরা চোখ,
+তোমার মিষ্টি হাসি,
+আর তোমার সুন্দর মন
+সবকিছুই তোমাকে বিশেষ করে তোলে।
+
+<br><br>
+
+আল্লাহ যেন তোমার জীবন সুখ,
+শান্তি ও সফলতায় ভরে দেন।
+
+<br><br>
+
+❤️ শুভ জন্মদিন মাইমুনা ❤️
+
+</p>
+
+
+<button onclick="surprise()">
+🎉 Surprise
+</button>
+
+
+</div>
+<script>
+
+// Countdown
+
+let number = 5;
+
+let count = document.getElementById("count");
+
+let page = document.getElementById("page");
+
+
+let timer = setInterval(()=>{
+
+
+count.innerHTML = number;
+
+
+number--;
+
+
+if(number < 0){
+
+
+clearInterval(timer);
+
+
+count.style.display="none";
+
+
+page.style.display="block";
+
+
+}
+
+},1000);
+
+
+
+
+
+// Surprise Button
+
+function surprise(){
+
+
+confetti();
+
+
+}
+
+
+
+// Hearts Animation
+
+function createHeart(){
+
+
+let heart=document.createElement("div");
+
+
+heart.className="heart";
+
+
+heart.innerHTML="❤️";
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.fontSize=
+(20+Math.random()*35)+"px";
+
+
+heart.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},9000);
+
+
+
+}
+
+
+setInterval(createHeart,300);
+
+
+
+
+
+// Balloon Animation
+
+function createBalloon(){
+
+
+let balloon=document.createElement("div");
+
+
+balloon.className="balloon";
+
+
+balloon.innerHTML="🎈";
+
+
+balloon.style.left=
+Math.random()*100+"vw";
+
+
+balloon.style.animationDuration=
+(8+Math.random()*5)+"s";
+
+
+document.body.appendChild(balloon);
+
+
+
+setTimeout(()=>{
+
+balloon.remove();
+
+},12000);
+
+
+
+}
+
+
+setInterval(createBalloon,900);
+
+
+
+
+
+// Rose Petals
+
+function rose(){
+
+
+let r=document.createElement("div");
+
+
+r.className="rose";
+
+
+r.innerHTML="🌹";
+
+
+r.style.left=
+Math.random()*100+"vw";
+
+
+r.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(r);
+
+
+
+setTimeout(()=>{
+
+r.remove();
+
+},9000);
+
+
+
+}
+
+
+setInterval(rose,700);
+
+
+
+
+
+// Confetti
+
+function confetti(){
+
+
+let colors=[
+
+"red",
+"yellow",
+"pink",
+"cyan",
+"orange",
+"white"
+
+];
+
+
+
+for(let i=0;i<250;i++){
+
+
+let c=document.createElement("div");
+
+
+c.className="confetti";
+
+
+c.style.left=
+Math.random()*100+"vw";
+
+
+c.style.background=
+colors[Math.floor(Math.random()*colors.length)];
+
+
+
+c.style.animationDuration=
+(2+Math.random()*4)+"s";
+
+
+
+document.body.appendChild(c);
+
+
+
+setTimeout(()=>{
+
+c.remove();
+
+},5000);
+
+
+
+}
+
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
